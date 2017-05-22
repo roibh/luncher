@@ -1,0 +1,79 @@
+<md-card class="example-card">
+  <md-card-header>
+
+
+  </md-card-header>
+  <md-card-content>
+
+
+
+    <form class="example-form" #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)" novalidate>    
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="First name" name="firstName" [ngModel]="detailsModel.FirstName">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="example-full-width">
+              <input mdInput name="lastName" placeholder="Long Last Name That Will Be Truncated" [ngModel]="detailsModel.LastName">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <md-input-container class="example-full-width">
+          <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+        </md-input-container>
+        <md-input-container class="example-full-width">
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-input-container>
+      </p>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="City">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="State">
+            </md-input-container>
+          </td>
+          <td>
+
+
+
+
+
+            <md-input-container class="example-full-width">
+              <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+              <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+            </md-input-container>
+          </td>
+
+        </tr>
+        <tr>
+          <td colspan="3">
+            <agm-map [latitude]="position.latitude" [longitude]="position.longitude" *ngIf="position">
+              <agm-marker [latitude]="position.latitude" [longitude]="position.longitude"></agm-marker>
+            </agm-map>
+          </td>
+        </tr>
+      </table>
+
+      <button md-button>
+      Save details
+    </button>
+
+    </form>
+  </md-card-content>
+  <md-card-actions>
+    
+  </md-card-actions>
+</md-card>

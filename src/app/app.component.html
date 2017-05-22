@@ -1,0 +1,43 @@
+<md-sidenav-container class="example-container">
+  <md-sidenav #sidenav class="example-sidenav" opened="needSetup">
+   <app-setup></app-setup>
+  </md-sidenav>
+
+  <div class="example-sidenav-content">
+    <md-card class="example-card">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <div class="pin-container">
+          <md-input-container>
+            <input mdInput placeholder="Pin" [value]="Pin">
+          </md-input-container>
+          <button md-button (click)="Backspace()">X</button>
+        </div>
+      </md-card-header>
+      <md-card-content>
+        <md-grid-list cols="3" rowHeight="1:1">
+          <md-grid-tile><button md-fab (click)="Type('1')"><md-icon>1</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('2')"><md-icon>2</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('3')"><md-icon>3</md-icon></button></md-grid-tile>
+
+          <md-grid-tile><button md-fab (click)="Type('4')"><md-icon>4</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('5')"><md-icon>5</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('6')"><md-icon>6</md-icon></button></md-grid-tile>
+
+          <md-grid-tile><button md-fab (click)="Type('7')"><md-icon>7</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('8')"><md-icon>8</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('9')"><md-icon>9</md-icon></button></md-grid-tile>
+
+          <md-grid-tile><button md-fab (click)="Type('*')"><md-icon>*</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('0')"><md-icon>0</md-icon></button></md-grid-tile>
+          <md-grid-tile><button md-fab (click)="Type('#')"><md-icon>#</md-icon></button></md-grid-tile>
+        </md-grid-list>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</md-sidenav-container>
